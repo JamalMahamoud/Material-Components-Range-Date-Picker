@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 //                use headerText to display the selected date
                 binding.textviewDateRange.text = dateRangePicker.headerText
 
-//               selection function return pair of long just like amy Pair you can get the first and second values
+//               selection function return pair of long just like any Pair you can get the first and second values
                 val startDateMillis = dateRangePicker.selection!!.first
                 val endDateMillis = dateRangePicker.selection!!.second
 //               now you have the date in milliseconds
