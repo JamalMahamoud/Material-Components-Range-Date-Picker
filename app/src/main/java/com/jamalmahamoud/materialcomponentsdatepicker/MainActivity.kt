@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 .setTitleText("Select dates")
                 .build()
 
-//            use the shoe method to show the calender when button is clicked
+//            use the show method to show the calender when button is clicked
             dateRangePicker.show(supportFragmentManager,"range Date")
 
 
@@ -42,9 +42,10 @@ class MainActivity : AppCompatActivity() {
                 val endDateMillis = dateRangePicker.selection!!.second
 //               now you have the date in milliseconds
 
+
+
 //              to get the number of days between the selected date
                 val dayBetweenInMillis = endDateMillis -startDateMillis
-
 
 //               convert the number of days in millis to minute
                 val dayBetweenInMinute =  dayBetweenInMillis/60000
@@ -57,10 +58,10 @@ class MainActivity : AppCompatActivity() {
 
                 /**
                 in case you wanted to to convert the selected range
-                into single date use the function getSingleDate()**/
+                into single date use the function millisToDate()**/
 
-                val  startDate = getSingleDate(startDateMillis)
-                val endDate  = getSingleDate(endDateMillis)
+                val  startDate = millisToDate(startDateMillis)
+                val endDate  = millisToDate(endDateMillis)
 
                 /*
                 you can convert this back type Date
@@ -80,7 +81,7 @@ class MainActivity : AppCompatActivity() {
     /**
      * this function takes milliseconds and convert it to date
      **/
-    private fun getSingleDate(DateMillis: Long): String {
+    private fun millisToDate(DateMillis: Long): String {
 
         val myCalendar = Calendar.getInstance()
         myCalendar.timeInMillis = DateMillis
